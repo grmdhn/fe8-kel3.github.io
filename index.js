@@ -9,7 +9,7 @@ const DIRECTION = {
     UP: 2,
     DOWN: 3,
 }
-const MOVE_INTERVAL = 60;
+const MOVE_INTERVAL = 100;
 
 function initPosition() {
     return {
@@ -28,7 +28,7 @@ function initHeadAndBody() {
 }
 
 function initDirection() {
-    return Math.floor(Math.random() * 4);
+    return Math.floor(Math.random() * 2);
 }
 
 function initSnake(color) {
