@@ -9,7 +9,7 @@ const DIRECTION = {
     UP: 2,
     DOWN: 3,
 }
-const MOVE_INTERVAL = 60;
+const MOVE_INTERVAL = 100;
 
 function initPosition() {
     return {
