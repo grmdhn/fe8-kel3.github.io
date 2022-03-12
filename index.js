@@ -9,7 +9,7 @@ const DIRECTION = {
     UP: 2,
     DOWN: 3,
 }
-const MOVE_INTERVAL = 100;
+var MOVE_INTERVAL = 170;
 
 function initPosition() {
     return {
@@ -112,6 +112,8 @@ function teleport(snake) {
     }
 }
 
+var levelUpAudio = new Audio('levelUp.mp3');
+
 function eat(snake, apple) {
     if (snake.head.x == apple.position.x && snake.head.y == apple.position.y) {
         apple.position = initPosition();
@@ -119,6 +121,28 @@ function eat(snake, apple) {
         snake.body.push({x: snake.head.x, y: snake.head.y});
         var audio = new Audio('eat.wav');
         audio.play();
+        if(snake.score == 5){
+            alert("Level Up");
+            levelUpAudio.play();
+            MOVE_INTERVAL -= 20
+        }else if(snake.score == 10){
+            alert("Level Up");
+            levelUpAudio.play();
+            MOVE_INTERVAL -= 20
+
+        }
+        else if(snake.score == 15){
+            alert("Level Up");
+            levelUpAudio.play();
+            MOVE_INTERVAL -= 20
+
+        }
+        else if(snake.score == 20){
+            alert("Level Up");
+            levelUpAudio.play();
+            MOVE_INTERVAL -= 20
+
+        }
     }
 }
 
@@ -166,6 +190,7 @@ function checkCollision(snakes) {
         audio.play();
         alert("Game Over");
         snakes = initSnake("black");
+        MOVE_INTERVAL = 170;
     }
     return isCollide;
 }
