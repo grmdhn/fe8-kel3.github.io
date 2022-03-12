@@ -117,6 +117,8 @@ function eat(snake, apple) {
         apple.position = initPosition();
         snake.score++;
         snake.body.push({x: snake.head.x, y: snake.head.y});
+        var audio = new Audio('eat.wav');
+        audio.play();
     }
 }
 
